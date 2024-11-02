@@ -4,13 +4,17 @@ This repository contains two Python scripts that download XKCD comics and their 
 
 ## Scripts
 
-1. **`download_xkcd_comic.py`**
+1. **`download_xkcd_comic_info.py`**
    - **Description:** Downloads all XKCD comics, extracting the comic URL, image URL, title, and mouseover text.
    - **Output:** Saves the data to `./outputs/xkcd_comic.csv`.
 
 2. **`download_xkcd_explanations.py`**
    - **Description:** Downloads explanations for all XKCD comics, including the publish date (if available) and the explanation text.
    - **Output:** Saves the data to `./outputs/xkcd_explanations.csv`.
+
+3. **`download_xkcd_comic_images.py`**
+   - **Description:** Downloads images for all XKCD comics, using the `Image URL` column of `./outputs/xkcd_comic.csv` (requires `download_xkcd_comic_info.py` run first)
+   - **Output:** Saves the data to `./outputs/xkcd_images/{comic_number}.{file_extension}`.
 
 ## Requirements
 
@@ -29,17 +33,12 @@ pip install requests beautifulsoup4 pandas
 
 1. **Clone the Repository**
 
-   ```bash
-   git clone https://github.com/yourusername/xkcd-downloader.git
-   cd xkcd-downloader
-   ```
-
 2. **Run the Scripts**
 
    - **Download XKCD Comics:**
 
      ```bash
-     python download_xkcd_comic.py
+     python download_xkcd_comic_info.py
      ```
 
    - **Download XKCD Explanations:**
@@ -48,7 +47,11 @@ pip install requests beautifulsoup4 pandas
      python download_xkcd_explanations.py
      ```
 
-   The scripts will create an `outputs` directory (if it doesn't exist) and save the CSV files there. They will resume from where they left off if run multiple times.
+    - **Download XKCD Explanations:** (requires `download_xkcd_comic_info.py` run first, to completion)
+
+     ```bash
+     python download_xkcd_comic_images.py
+     ```
 
 ## Notes
 
@@ -57,5 +60,8 @@ pip install requests beautifulsoup4 pandas
 - Ensure you have a stable internet connection while running the scripts.
 
 ## License
-
 This project is licensed under the MIT License.
+
+## Other Licenses
+xkcd is available under the [Creative Commons Attribution-NonCommercial 2.5 License](https://creativecommons.org/licenses/by-nc/2.5/).  
+explainxkcd is available under the [Creative Commons Attribution-ShareAlike 3.0 license](https://creativecommons.org/licenses/by-nc/2.5/).
