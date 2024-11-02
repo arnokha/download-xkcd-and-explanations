@@ -56,7 +56,7 @@ pip install requests beautifulsoup4 pandas
 ## Notes
 
 - Each script pauses for 2 seconds between requests to respect server load.
-- The scripts check for existing entries in the CSV files to avoid duplicates.
+- The scripts check for existing entries in the CSV files or existing images to avoid duplicates.
 - Ensure you have a stable internet connection while running the scripts.
 
 ## License
