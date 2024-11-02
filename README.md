@@ -35,19 +35,19 @@ pip install requests beautifulsoup4 pandas
 
 2. **Run the Scripts**
 
-   - **Download XKCD Comics:**
+- **Download XKCD Comics:**
 
      ```bash
      python download_xkcd_comic_info.py
      ```
 
-   - **Download XKCD Explanations:**
+- **Download XKCD Explanations:**
 
      ```bash
      python download_xkcd_explanations.py
      ```
 
-    - **Download XKCD Explanations:** (requires `download_xkcd_comic_info.py` run first, to completion)
+- **Download XKCD Explanations:** (requires `download_xkcd_comic_info.py` run first, to completion)
 
      ```bash
      python download_xkcd_comic_images.py
