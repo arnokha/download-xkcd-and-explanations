@@ -1,3 +1,5 @@
+# TODO tables and ul and contained li from explanation as long as its before the next h2
+# for those tags, just reproduce the HTML, but make sure there is a newline placed before and after it
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -101,6 +103,10 @@ while True:
             # Remove spaces before punctuation marks
             paragraph_text = re.sub(r'\s+([.,!?;:\'\"\)\]])', r'\1', paragraph_text)
             explanation_paragraphs.append(paragraph_text)
+        elif sibling.name in ['table', 'ul']:
+            # Reproduce the HTML with newlines before and after
+            html_content = str(sibling)
+            explanation_paragraphs.append(html_content)
         sibling = sibling.find_next_sibling()
     # Combine paragraphs with delimiter
     explanation = '\n\n'.join(explanation_paragraphs)
