@@ -47,7 +47,7 @@ pip install requests beautifulsoup4 pandas
      python download_xkcd_explanations.py
      ```
 
-- **Download XKCD Explanations:** (requires `download_xkcd_comic_info.py` run first, to completion)
+- **Download XKCD Explanations:** (requires `download_xkcd_comic_info.py` be run to completion first)
 
      ```bash
      python download_xkcd_comic_images.py
