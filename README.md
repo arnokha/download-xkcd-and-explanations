@@ -1,6 +1,6 @@
 # XKCD Comics and Explanations Downloader
 
-This repository contains two Python scripts that download XKCD comics and their corresponding explanations from [xkcd.com](https://xkcd.com) and [explainxkcd.com](https://www.explainxkcd.com), respectively.
+This repository contains Python scripts that download XKCD comics and their corresponding explanations from [xkcd.com](https://xkcd.com) and [explainxkcd.com](https://www.explainxkcd.com).
 
 ## Scripts
 
