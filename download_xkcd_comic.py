@@ -22,10 +22,17 @@ index = 1  # Start from the first comic
 while True:
     url = f'https://xkcd.com/{index}/'
     print(f'Processing {url}')
+    
+    # Skip if the URL already exists in the DataFrame
+    if url in df['URL'].values:
+        print(f'URL {url} already exists, skipping.')
+        index += 1
+        continue
+    
     try:
         response = requests.get(url)
         # Stop if a 404 error is encountered
-        if response.status_code == 404:
+        if response.status_code == 404 and not index == 404: # as a joke, there is no comic #404
             print(f'404 error at index {index}, stopping.')
             break
         elif response.status_code != 200:
@@ -35,13 +42,6 @@ while True:
             continue
     except requests.exceptions.RequestException as e:
         print(f'Request failed at index {index}: {e}')
-        index += 1
-        time.sleep(2)
-        continue
-
-    # Skip if the URL already exists in the DataFrame
-    if url in df['URL'].values:
-        print(f'URL {url} already exists, skipping.')
         index += 1
         time.sleep(2)
         continue
