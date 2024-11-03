@@ -16,7 +16,7 @@ for index, row in df.iterrows():
     image_url = row['Image URL']
     comic_url = row['URL']
     
-    # Check if image_url is valid (comic 1037 has multiple images and i think it's the only nan)
+    # Check if image_url is valid (comic #1037 has multiple images and i think it's the only nan)
     if pd.isna(image_url):
         print(f"Image URL is missing from CSV, skipping.")
         continue

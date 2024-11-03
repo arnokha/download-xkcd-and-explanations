@@ -32,7 +32,7 @@ while True:
     try:
         response = requests.get(url)
         # Stop if a 404 error is encountered
-        if response.status_code == 404 and not index == 404: # as a joke, there is no comic #404
+        if response.status_code == 404 and not index == 404: # comic #404 is a 404 error :)
             print(f'404 error at index {index}, stopping.')
             break
         elif response.status_code != 200:
